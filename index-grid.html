@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 90vw;
+        }
+        .grid-item {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            display: none; /* Initially hidden */
+        }
+        .grid-item img {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            transform: translate(-10%, -10%); /* Offset inside to remove credits */
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="grid-container" id="grid-container"></div>
+
+    <script>
+        let currentIndex = 0;
+        const gridContainer = document.getElementById("grid-container");
+        let imageList = []; // Will store image paths dynamically
+
+        // Function to load CSV dynamically
+        async function loadCSV() {
+            try {
+                const response = await fetch("test-tutorial-4.csv"); // Make sure coordinates.csv is in the same folder
+                const text = await response.text();
+                const lines = text.trim().split("\n").slice(1); // Remove header
+
+                lines.forEach(line => {
+                    const parts = line.split(",");
+                    if (parts.length > 0) {
+                        let index = parts[0].trim(); // Extract the first number (Index)
+                        let imagePath = `./street_view_images/${index}.jpg`; // Construct image path dynamically
+                        imageList.push(imagePath);
+                    }
+                });
+
+            } catch (error) {
+                console.error("Error loading CSV:", error);
+            }
+        }
+
+        function addNextImage() {
+            if (currentIndex >= imageList.length) return;
+
+            let imgWrapper = document.createElement("div");
+            imgWrapper.classList.add("grid-item");
+
+            let imgElement = document.createElement("img");
+            imgElement.src = imageList[currentIndex];
+            imgElement.alt = "Satellite Image";
+
+            imgWrapper.appendChild(imgElement);
+            gridContainer.appendChild(imgWrapper);
+
+            imgWrapper.style.display = "block"; // Make image visible
+
+            currentIndex++;
+        }
+
+        document.body.addEventListener("click", addNextImage);
+
+        // Load CSV before interaction starts
+        loadCSV();
+    </script>
+
+</body>
+</html>
