@@ -39,9 +39,10 @@ It is IMPORTANT to keep your API key confidential. Exposure of your key could po
 ### Python
 #### For macOS
 - Download Python from the [Python downloads page for macOS](https://www.python.org/downloads/macos/).
-- Install Homebrew by pasting the following in Terminal: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-- Install Python via Homebrew: `brew install python`
-- Verify installation with: `python3 --version`
+   - or use Terminal
+      - Install Homebrew by pasting the following in *Terminal*: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+      - Install Python via Homebrew: `brew install python`
+      - Verify installation with: `python3 --version`
 
 #### For Windows
 - Download Python from the [Python downloads page for Windows](https://www.python.org/downloads/windows/).
