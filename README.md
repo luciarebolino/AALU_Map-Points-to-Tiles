@@ -287,6 +287,11 @@ api_key = "API-KEY"  # Replace with your API key
 street_view_images(csv_file_path, api_key)
 ```
 
+
+- **Heading**: This parameter controls the compass heading of the camera. It accepts values from 0 to 360, where 0 or 360 is north, 90 is east, 180 is south, and 270 is west. Adjusting the heading allows you to rotate the camera to face the building directly or from different angles.
+- **Pitch**: The pitch adjusts the angle at which the camera points upwards or downwards. The values range from -90 (directly down) to 90 (directly up), with 0 being level with the horizon. To better focus on facades, a slight upward pitch can be beneficial.
+- **Field of View (FOV)**: The fov parameter adjusts the zoom level of the camera. It can range from 0 to 120, where lower values zoom in more, narrowing the field of view. Adjusting the FOV can help you get a closer look at architectural details without physically moving the camera location.
+
 ## VISUALIZE THE GRID:
 Once you are happy with the set of images and want to visualize them all together in a grid to see them as a system, you can download the HTML file called 'index-grid.html' from the GitHub folder. Ensure that the name of the CSV file is correct, the image files are either in .png or .jpg format, and that the file is in the same folder, then run the code.
 
