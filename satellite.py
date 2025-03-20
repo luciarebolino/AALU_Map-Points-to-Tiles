@@ -59,7 +59,7 @@ def satellite_squares(csv_file, api_key, zoom=18, size=640, output_folder="satel
     print("Image fetching complete.")
 
 # Example usage
-csv_file_path = "test-tutorial-4.csv"  # Your CSV file with IDs and coordinates
-api_key = "AIzaSyDTEZeV5GmRFh1-TQm_v8RCxWOGmWaMivM"  # Replace with your API key
+csv_file_path = "coordinates.csv"  # Your CSV file with IDs and coordinates
+api_key = "API-KEY"  # Replace with your API key
 
 satellite_squares(csv_file_path, api_key)
