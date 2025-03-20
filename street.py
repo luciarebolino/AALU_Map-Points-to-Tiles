@@ -62,7 +62,7 @@ def street_view_images(csv_file, api_key, size="640x640", fov=50, pitch=0, headi
     print("Image fetching complete.")
 
 # Example usage
-csv_file_path = "test-tutorial-4.csv"  # Your CSV file with IDs and coordinates
-api_key = "AIzaSyDTEZeV5GmRFh1-TQm_v8RCxWOGmWaMivM"  # Replace with your API key
+csv_file_path = "coordinates.csv"  # Your CSV file with IDs and coordinates
+api_key = "API-KEY"  # Replace with your API key
 
 street_view_images(csv_file_path, api_key)
