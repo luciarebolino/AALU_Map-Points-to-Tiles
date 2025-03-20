@@ -104,7 +104,7 @@ out skel qt;
   
 <img width="1728" alt="Screenshot 2025-03-20 at 8 36 46 PM" src="https://github.com/user-attachments/assets/4feeb1c6-e578-4266-8594-3370ac800850" />
 
-### GTrace Geometry/Path in QGIS
+### Trace Geometry/Path in QGIS
 - **QGIS**: Building on results from OpenStreetMap or Google Maps—or even starting from scratch—we'll use QGIS to directly draw geometries to explore. This involves creating paths or outlining areas to derive specific coordinate points.
 
 In all three cases, the goal is to compile these coordinates into a CSV file, which can then be used to pull images from Google Maps, whether satellite or street views, generating a diverse range of geographical visualizations.
