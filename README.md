@@ -49,12 +49,15 @@ It is IMPORTANT to keep your API key confidential. Exposure of your key could po
 - During installation, check "Add Python 3.x to PATH".
 - Follow installation prompts.
 
-## How to Get Data
-### Data Acquisition Techniques
-- **OpenStreetMap (OSM)**: Use OSM for a starting point to understand geographical locations.
-- **Overpass API**: Customize queries to fetch detailed information from OSM, which can then be imported into QGIS.
+## HOW TO GET DATA
 
-#### Example Query
+### OpenStreetMap (OSM) 
+- **OpenStreetMap (OSM)**: OpenStreetMap (OSM) is a dynamic, collaborative project to build a freely editable map of the world. It serves as an excellent source of geospatial data, enriched by a global community of mappers. The open-source nature of OSM means that while the data is rich and diverse, its accuracy and detail can vary, thus it shouldn't be solely relied upon for critical data needs. For our workshop, OSM is a valuable starting point to understand geographical locations and examine landforms.
+  
+- **Overpass API**: To delve deeper and extract specific features or points based on tailored criteria, we use the [Overpass API](https://overpass-turbo.eu/). This powerful tool enables the definition of custom queries to fetch detailed information from OSM, which can then be directly imported into QGIS for enriched analysis.
+     - For example, if you're interested in mapping specific amenities, like prisons, you might structure your Overpass API query as follows:
+
+#### Example Query 1
 ```query
 [out:json][timeout:25];
 (
@@ -65,4 +68,44 @@ It is IMPORTANT to keep your API key confidential. Exposure of your key could po
 out body;
 >;
 out skel qt;
+```
+
+To adapt this query for different features, simply change the "amenity"="prison" parameter to your feature of interest, such as "school" or "hospital". You can find a complete list of mappable features on the [OSM Wiki: Map Features](https://wiki.openstreetmap.org/wiki/Map_features).
+    - Changing the Feature Type (Tag): The amenity=prison part of the query is a tag filter. amenity is the key, and prison is the value. To change the feature you're interested in, replace prison with another value. For example:
+        - To find schools: "amenity"="school"
+        - To find hospitals: "amenity"="hospital"
+   - Choosing Node, Way, or Relation: Decide whether to use node, way, or relation based on the type of feature you are interested in:
+     1. Node: Use if the feature is typically a point location (e.g., a water well, a bus stop).
+     2. Way: Use for linear features (e.g., roads, rivers) or areas (e.g., park perimeters, building footprints).
+     3. Relation: Use for complex structured features that can't be adequately represented as a single node or way (e.g., a bus route involving multiple streets, a forest with several disjointed parts).
+     
+#### Example Query 2
+```query
+
+[out:json][timeout:25];
+(
+  // Retrieve nodes and ways that represent rivers
+  node["waterway"="river"]({{bbox}});
+  way["waterway"="river"]({{bbox}});
+  relation["waterway"="river"]({{bbox}});
+
+  // Retrieve nodes and ways that represent streams
+  node["waterway"="stream"]({{bbox}});
+  way["waterway"="stream"]({{bbox}});
+  relation["waterway"="stream"]({{bbox}});
+);
+out body;
+>;
+out skel qt;
+```
+
+### Google Maps: Using 'My Maps'
+- **Google Maps**: offers a 'My Maps' feature that allows us to trace paths or mark areas, which can be exported in KML format. This format is highly compatible with QGIS, providing a good vector base for extracting points. This tool is particularly useful if your analysis focuses on architectural elements—explore street surroundings and buildings from a human-eye perspective. Using this technique allow togather easily snapshots from Google Street View to have visual analysis with both aerial and street-level views.
+  
+<img width="1728" alt="Screenshot 2025-03-20 at 8 36 46 PM" src="https://github.com/user-attachments/assets/4feeb1c6-e578-4266-8594-3370ac800850" />
+
+### GTrace Geometry/Path in QGIS
+- **QGIS**: Building on results from OpenStreetMap or Google Maps—or even starting from scratch—we'll use QGIS to directly draw geometries to explore. This involves creating paths or outlining areas to derive specific coordinate points.
+
+In all three cases, the goal is to compile these coordinates into a CSV file, which can then be used to pull images from Google Maps, whether satellite or street views, generating a diverse range of geographical visualizations.
 
