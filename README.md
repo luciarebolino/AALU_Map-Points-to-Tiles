@@ -5,7 +5,7 @@
 
 
 ## Introduction
-This workshop provides an introduction to the Google Static Maps API, a powerful tool for downloading satellite and aerial imagery via a straightforward Python script. The script serves as an entry point into visual research, allowing to explore a chosen topic by gathering and scraping point locations from various APIs.
+[This workshop](https://docs.google.com/spreadsheets/d/1-2BhUc3eKs-TJocETlGfo3ZGmwLv26rpqJMCYYgoAxI/edit?usp=sharing) provides an introduction to the Google Static Maps API, a powerful tool for downloading satellite and aerial imagery via a straightforward Python script. The script serves as an entry point into visual research, allowing to explore a chosen topic by gathering and scraping point locations from various APIs.
 
 An API, or Application Programming Interface, is a set of rules and tools that allows different software applications to communicate with each other. Think of it like a waiter in a restaurant: the waiter is the intermediary that takes your order (your request for information or action), brings it to the kitchen (a software system), and then brings the food (the data or outcome) back to you.
 
