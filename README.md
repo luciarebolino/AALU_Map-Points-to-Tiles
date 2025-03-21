@@ -18,6 +18,10 @@ The workflow for the session is as follows:
 
 The outcome of the workshop is imagined to be a collection of non-georeferenced.png image files. These images are perfect for assembling into visual arrays and animations that are designed for use outside of traditional GIS software, and each group can decide to layer them in a "screen performance" according to their creativity.
 
+Exemples:
+
+https://centerforspatialresearch.github.io/exostructures/
+
 
 
 ## Setup Requirements
