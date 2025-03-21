@@ -9,8 +9,6 @@ This workshop provides an introduction to the Google Static Maps API, a powerful
 
 An API, or Application Programming Interface, is a set of rules and tools that allows different software applications to communicate with each other. Think of it like a waiter in a restaurant: the waiter is the intermediary that takes your order (your request for information or action), brings it to the kitchen (a software system), and then brings the food (the data or outcome) back to you.
 
-Goal of the workshop is to transform the points gathered through API into tiles and arrange them in a grid or video format, ultimately merging them to create a alternative narratives of geospatial data.
-
 The goal of the workshop is to transform points gathered through APIs into tiles and arrange them in a grid or video format, creating alternative narratives of geospatial data. At the end of the day everyone will get a starting/basic knowledge of APIs and Python through very simple codes, in order to download satellite images based on latitude and longitude coordinates provided in a CSV file. Unlike the georeferenced multispectral satellite data from Landsat or Sentinel, the imagery retrieved in this workshop lacks embedded geographic metadata and is not suitable for georeferencing, making it ideal for a more non-GIS use and experiments.
 
 The workflow for the session is as follows:
@@ -55,7 +53,7 @@ It is IMPORTANT to keep your API key confidential. Exposure of your key could po
 - **OpenStreetMap (OSM)**: OpenStreetMap (OSM) is a dynamic, collaborative project to build a freely editable map of the world. It serves as an excellent source of geospatial data, enriched by a global community of mappers. The open-source nature of OSM means that while the data is rich and diverse, its accuracy and detail can vary, thus it shouldn't be solely relied upon for critical data needs. For our workshop, OSM is a valuable starting point to understand geographical locations and examine landforms.
   
 - **Overpass API**: To delve deeper and extract specific features or points based on tailored criteria, we use the [Overpass API](https://overpass-turbo.eu/). This powerful tool enables the definition of custom queries to fetch detailed information from OSM, which can then be directly imported into QGIS for enriched analysis.
-     - For example, if you're interested in mapping specific amenities, like prisons, you might structure your Overpass API query as follows:
+     - For example, if you're interested in mapping specific amenities, like schools, you might structure your Overpass API query as follows:
 
 #### Example Query 1
 ```query
@@ -70,9 +68,9 @@ out body;
 out skel qt;
 ```
 
-To adapt this query for different features, simply change the "amenity"="prison" parameter to your feature of interest, such as "school" or "hospital". You can find a complete list of mappable features on the [OSM Wiki: Map Features](https://wiki.openstreetmap.org/wiki/Map_features).
-    - Changing the Feature Type (Tag): The amenity=prison part of the query is a tag filter. amenity is the key, and prison is the value. To change the feature you're interested in, replace prison with another value. For example:
-        - To find schools: "amenity"="school"
+To adapt this query for different features, simply change the "amenity"="school" parameter to your feature of interest. You can find a complete list of mappable features on the [OSM Wiki: Map Features](https://wiki.openstreetmap.org/wiki/Map_features).
+    - Changing the Feature Type (Tag): The amenity=school part of the query is a tag filter (amenity is the key, and school is the value). To change the feature you're interested in, replace school with another value. For example:
+        - To find prisons: "amenity"="prison"
         - To find hospitals: "amenity"="hospital"
    - Choosing Node, Way, or Relation: Decide whether to use node, way, or relation based on the type of feature you are interested in:
      1. Node: Use if the feature is typically a point location (e.g., a water well, a bus stop).
