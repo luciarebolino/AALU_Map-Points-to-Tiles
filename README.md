@@ -28,6 +28,7 @@ https://centerforspatialresearch.github.io/exostructures/
 - ### Google Maps API
    - Before you begin, follow the steps provided [here](https://developers.google.com/maps/documentation/maps-static/start) to obtain a Google API key for the Static Maps API. It's crucial to activate billing for your API key to use the script, though you will not face any charges for the project scope described in this tutorial. Google generously offers $200 in monthly credits for each API account, which equates to downloading approximately 100,000 images from the Static Maps API each month at no cost. For detailed information on API pricing, refer to this page.
 It is IMPORTANT to keep your API key confidential. Exposure of your key could potentially lead to substantial unauthorized charges. This tutorial does not require sharing the code externally, so security concerns are minimized for this exercise.
+LINK: https://developers.google.com/maps/documentation/javascript/get-api-key
 
 - ### Visual Studio Code
    - Download Visual Studio Code [here](https://code.visualstudio.com/).
