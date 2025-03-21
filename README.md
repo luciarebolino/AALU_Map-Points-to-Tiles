@@ -55,7 +55,8 @@ LINK: https://developers.google.com/maps/documentation/javascript/get-api-key
   
 #### errors: 
 If you get any errors it's likely you miss the dependencies run the code below in your Terminal inside Visual Studio Code:
-pip install requests moviepy
+pip install requests 
+pip install moviepy==1.0.3
 
 ## HOW TO GET DATA:
 
