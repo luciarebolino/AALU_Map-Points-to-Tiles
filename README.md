@@ -47,6 +47,11 @@ It is IMPORTANT to keep your API key confidential. Exposure of your key could po
 - During installation, check "Add Python 3.x to PATH".
 - Follow installation prompts.
 
+  
+#### errors: 
+If you get any errors it's likely you miss the dependencies run the code below in your Terminal inside Visual Studio Code:
+pip install requests moviepy
+
 ## HOW TO GET DATA:
 
 ### OpenStreetMap (OSM) 
